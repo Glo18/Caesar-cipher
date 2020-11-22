@@ -1,14 +1,18 @@
 package main;
 
 import org.junit.*;
+
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 public class CipherTest {
 @Test
     public void
-    newCipher_leftshift3placesdownthea;() {
+    newCipher_leftShiftThreePlacesDownTheAlphabets;() {
     Cipher testCipher = new Cipher();
-    expectedOutput.substitute(D, A);
+    List<Object> expectedOut = new ArrayList<Object>();
+    expectedOut.substitute();
     assertEquals(expectedOutput,testCipher.newCipher);
 }
 }
