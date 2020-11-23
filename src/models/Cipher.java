@@ -15,4 +15,8 @@ public class Cipher {
     public int getKey() {
         return mKey;
     }
+    public String isEncrypted() {
+        mStatement = "d";
+        return mStatement;
+    }
 }
