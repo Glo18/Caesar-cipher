@@ -25,7 +25,7 @@ public class CipherTest {
     @Test
     public void newCipher_substituteLetter_d() {
         Cipher testCipher = new Cipher("d", 3);
-        assertEquals("d", testCipher.toEncrypt("d", 3));
+        assertEquals("d", testCipher.toEncrypt());
     }
     @Test
     public void newCipher_substituteLetterByKey_d(){
@@ -40,7 +40,7 @@ public class CipherTest {
     @Test
     public void newCipher_encryptAStringByKey_ab(){
         Cipher testCipher = new Cipher("yz", 2);
-        assertEquals("ab",testCipher.isDecrypted("yz",2));
+        assertEquals("ab",testCipher.isEncrypted("yz",2));
     }
     @Test
     public void newCipher_decryptAStringByKey_yz(){

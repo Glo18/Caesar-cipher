@@ -15,7 +15,7 @@ public class Cipher {
     public int getKey() {
         return mKey;
     }
-    public String encrypted() {
+    public String toEncrypt() {
         mStatement = "d";
         return mStatement;
     }
@@ -25,14 +25,14 @@ public class Cipher {
 
         for (int i = 0; i < statement.length(); i++) {
             int encrypt = statement.charAt(i);
+            char encrypts;
             if (encrypt + key > 100) {
-                char encrypts = (char) (encrypt - 26 +key);
-                encrypted.append(encrypts);
+                encrypts = (char) (encrypt - 26 + key);
             }
             else {
-                char encrypts = (char) (encrypt + (key % 26));
-                encrypted.append(encrypts);
+                encrypts = (char) (encrypt + (key % 26));
             }
+            encrypted.append(encrypts);
         }
       results +=encrypted;
         return results;
@@ -56,6 +56,8 @@ public class Cipher {
         results += decrypted;
         return results;
  }
-    }
+
+}
+
 
 

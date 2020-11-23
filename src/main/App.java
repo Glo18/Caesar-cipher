@@ -5,8 +5,9 @@ import models.Cipher;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
-        console myConsole = System.console();
+
+    public static <console> void main(String[] args) {
+        console myConsole = (console) System.console();
         Scanner myScanner = new Scanner(System.in);
 
         boolean programRunning = true;
@@ -23,8 +24,9 @@ public class App {
                 int key = myScanner.nextInt();
 
                 Cipher userEncryption = new Cipher(statement, key);
-                String encryption = userEncryption.toEncrypt(statement, key);
-                System.out.println("Here is your encrypted statement: /n" + encryption);
+                String encryption = userEncryption.isEncrypted(statement, key);
+
+                System.out.println("Here is your encrypted statement: \n" + encryption);
             } else if (userEncrypt.equals("decrypt")) {
                 System.out.println("Enter your statement:");
                 String statementDecrypt = myConsole.readLine();
@@ -34,7 +36,7 @@ public class App {
 
                 Cipher userDecryption = new Cipher(statementDecrypt, keyDecrypt);
                 String decryption = userDecryption.toDecrypt(statementDecrypt, keyDecrypt);
-                System.out.println("Here is your decrypted statement: /n" + decryption);
+                System.out.println("Here is your decrypted statement: \n" + decryption);
             } else if (userEncrypt.equals("Exit")){
                 System.out.println("Goodbye!");
                 programRunning = false;
