@@ -12,7 +12,7 @@ public class Cipher {
     public String getStatement() {
         return mStatement;
     }
-    public Key getKey() {
+    public int getKey() {
         return mKey;
     }
 }
