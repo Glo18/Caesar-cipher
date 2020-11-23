@@ -9,30 +9,39 @@ public class App {
         console myConsole = System.console();
         Scanner myScanner = new Scanner(System.in);
 
-        boolean runProgram = true;
+        boolean programRunning = true;
 
-        System.out.println("Welcome! Would you like to encrypt or decrypt a statement?");
-        String userEncryption = myConsole.readLine();
+        while (programRunning) {
+            System.out.println("Welcome! Would you like to encrypt or decrypt a statement?");
+            String userEncrypt = myConsole.readLine();
 
-        if (userEncryption.equals("encrypt")) {
-            System.out.println("Enter your statement:");
-            String statement = myConsole.readLine();
+            if (userEncrypt.equals("encrypt")) {
+                System.out.println("Enter your statement:");
+                String statement = myConsole.readLine();
 
-            System.out.println("Enter encryption key:");
-            int key = myScanner.nextInt();
+                System.out.println("Enter encryption key:");
+                int key = myScanner.nextInt();
 
-            Cipher userEncryption = new Cipher(statement, key);
-            String encryption = userEncryption.isEncrypted(statement, key);
-            System.out.println("The statement that's encrypted is /n" + encryption);
-        }
-        else if (userEncryption.equals("decrypt")) {
-            System.out.println("Enter your statement:");
-            String statementDecrypt = myConsole.readLine();
+                Cipher userEncryption = new Cipher(statement, key);
+                String encryption = userEncryption.toEncrypt(statement, key);
+                System.out.println("Here is your encrypted statement: /n" + encryption);
+            } else if (userEncrypt.equals("decrypt")) {
+                System.out.println("Enter your statement:");
+                String statementDecrypt = myConsole.readLine();
 
-            System.out.println("Enter decrption key:");
-            int key = myScanner.nextInt();
+                System.out.println("Enter decryption key:");
+                int key = myScanner.nextInt();
 
-            C
+                Cipher userDecryption = new Cipher(statementDecrypt, keyDecrypt);
+                String decryption = userDecryption.toDecrypt(statementDecrypt, keyDecrypt);
+                System.out.println("Here is your decrypted statement: /n" + decryption);
+            } else if (userEncrypt.equals("Exit")){
+                System.out.println("Goodbye!");
+                programRunning = false;
+            }
+            else {
+                System.out.println("I'm sorry we don't recognize your input");
+            }
         }
     }
 }
