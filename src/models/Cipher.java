@@ -19,5 +19,8 @@ public class Cipher {
         mStatement = "d";
         return mStatement;
     }
-    public String isA
+    public String isEncrypted(String statement, int key) {
+        String results = "";
+
+    }
 }
