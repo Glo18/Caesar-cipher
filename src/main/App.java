@@ -30,7 +30,7 @@ public class App {
                     Cipher userEncryption = new Cipher(statement, key);
                     String encryption = userEncryption.isEncrypted(statement, key);
 
-                    System.out.println("Here is your encrypted statement: \n" + encryption);
+                    System.out.println("Your encrypted statement is: \n" + encryption);
                     break;
                 }
                 case "decrypt": {
@@ -42,7 +42,7 @@ public class App {
 
                     Cipher userDecryption = new Cipher(statementDecrypt, keyDecrypt);
                     String decryption = userDecryption.toDecrypt(statementDecrypt, keyDecrypt);
-                    System.out.println("Here is your decrypted statement: \n" + decryption);
+                    System.out.println("Your decrypted statement is: \n" + decryption);
                     break;
                 }
                 case "Exit":
