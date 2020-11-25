@@ -1,10 +1,9 @@
 package models;
 
-import java.security.Key;
-
 public class Cipher {
     private String mStatement;
     private int mKey;
+
     public Cipher(String Statement, int Key) {
         mStatement = Statement;
         mKey = Key;
@@ -16,7 +15,7 @@ public class Cipher {
         return mKey;
     }
     public String toEncrypt() {
-        mStatement = "d";
+        mStatement = "b";
         return mStatement;
     }
     public String isEncrypted(String statement, int key) {
@@ -25,14 +24,14 @@ public class Cipher {
 
         for (int i = 0; i < statement.length(); i++) {
             int encrypt = statement.charAt(i);
-            char encrypts;
-            if (encrypt + key > 100) {
-                encrypts = (char) (encrypt - 26 + key);
+            if (encrypt + key > 122) {
+                char encrypts = (char) (encrypt - 26 + key);
+                encrypted.append(encrypts);
             }
             else {
-                encrypts = (char) (encrypt + (key % 26));
+                char encrypts = (char) (encrypt + (key % 26));
+                encrypted.append(encrypts);
             }
-            encrypted.append(encrypts);
         }
       results +=encrypted;
         return results;
@@ -44,7 +43,7 @@ public class Cipher {
         for (int i = 0; i < statement.length(); i++) {
             int decrypt = statement.charAt(i);
 
-            if ((decrypt - key > 70) && (decrypt - key < 90) ) {
+            if ((decrypt - key > 71) && (decrypt - key < 97) ) {
                 char decrypts = (char) (decrypt + 26 - key);
                 decrypted.append(decrypts);
             }
