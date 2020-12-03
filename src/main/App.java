@@ -1,29 +1,29 @@
 package main;
 
-import models.Cipher;
+import main.models.Cipher;
 
 import java.util.Scanner;
 
-import java.io.Console;
 public class App {
 
     private static int keyDecrypt;
 
     public static void main(String[] args) {
-        Console myConsole = System.console();
+//        Console myConsole = System.console();
         Scanner myScanner = new Scanner(System.in);
 
         boolean programRunning = true;
 
         while (programRunning) {
             System.out.println("Welcome! Would you like to encrypt or decrypt a statement?");
-            String userEncrypt = myConsole.readLine();
+//            String userEncrypt = myConsole.readLine();
+            String userEncrypt = myScanner.nextLine();
 
             switch (userEncrypt) {
                 case "encrypt": {
                     System.out.println("Enter your statement:");
-                    String statement = myConsole.readLine();
-
+//                    String statement = myConsole.readLine();
+                    String statement = myScanner.nextLine();
                     System.out.println("Enter encryption key:");
                     int key = myScanner.nextInt();
 
@@ -35,7 +35,8 @@ public class App {
                 }
                 case "decrypt": {
                     System.out.println("Enter your statement:");
-                    String statementDecrypt = myConsole.readLine();
+//                    String statementDecrypt = myConsole.readLine();
+                    String statementDecrypt = myScanner.nextLine();
 
                     System.out.println("Enter decryption key:");
                     int key = myScanner.nextInt();

@@ -1,8 +1,8 @@
-package models;
+package test;
 
+import main.models.Cipher;
 import org.junit.*;
-import java.security.Key;
-import java.sql.Statement;
+
 import static org.junit.Assert.*;
 public class CipherTest {
     @Test
